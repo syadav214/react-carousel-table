@@ -5,6 +5,9 @@ React component of Carousel inside a table styled in bootstrap
 
 ## Example
 
+
+![alt text](https://user-images.githubusercontent.com/24729891/59196519-93b10b00-8bac-11e9-9110-0f2f6bfd0df7.png)
+
 ```html
 <!-- Put bootstrap cdn link (like below) in index.html of your React App -->
 <!-- Latest compiled and minified CSS -->
@@ -18,36 +21,39 @@ React component of Carousel inside a table styled in bootstrap
 
 ```jsx
 import React, { Component } from 'react';
-import OverflowMenu from 'react-bootstrap-overflow-menu';
+import 'font-awesome/css/font-awesome.min.css';
+import Carousel from 'react-carousel-table';
 
-// Mention your own menu items (only 'id' and 'text' are supported)
-const menuItems = [
-  { id: 'edit', text: 'Edit' },
-  { id: 'delete', text: 'Delete' }
+const images = [
+  {
+    id: '1',
+    url:
+      'https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500'
+  },
+  {
+    id: '2',
+    url:
+      'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+  }
 ];
 
 class App extends Component {
-  menuItemClick = e => console.log('App', e.target.id); // Write your own logic
-
   render() {
     return (
       <div>
-        OverflowMenu
-        <br />
         <div className="container">
-          <table style={{ width: '50%' }}>
-            <tr>
-              <td>Demo</td>
-            </tr>
-            <tr>
-              <td>
-                <OverflowMenu
-                  className="text-right"
-                  menuItems={menuItems}
-                  menuItemClick={this.menuItemClick}
-                />
-              </td>
-            </tr>
+          <br />
+          Carousel in a Table
+          <br />
+          <table className="table" style={{ width: '80%' }}>
+            <tbody>
+              <tr>
+                <td>Demo</td>
+                <td>
+                  <Carousel images={images} pxs={100} />
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
@@ -61,34 +67,36 @@ export default App;
 ## Install
 
 ```cli
-npm install react-bootstrap-overflow-menu
+npm install react-carousel-table
+npm install font-awesome
 ```
 
 ## Props
 
-##### `className`
+##### `images`
 
-Sets the class name (bootstrap class) of the overflow menu. Defaults to `text-right`. Valid values are:
-
-`text-left | text-center | text-right` :: Alignment of the overflow menu
-
----
-
-##### `menuItems`
-
-An array of object with properties like 'id' and 'text'.
+An array of object with properties like 'id' and 'url'.
 ```js
-const menuItems = [
-  { id: 'edit', text: 'Edit' },
-  { id: 'delete', text: 'Delete' }
+const images = [
+  {
+    id: '1',
+    url:
+      'https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500'
+  },
+  {
+    id: '2',
+    url:
+      'https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+  }
 ];
 ```
 
 ---
 
-##### `menuItemClick`
+##### `pxs`
 
-A callback function to get event object of a button of a menu item.
+Sets the width and height of image box.
+
 
 ## License
 
