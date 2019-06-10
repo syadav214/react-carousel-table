@@ -11,7 +11,7 @@ class Carousel extends Component {
     };
   }
 
-  onPrevClick = () => {
+  onPrevImgClick = () => {
     if (this.state.currIndex > 0) {
       this.setState({
         currIndex: this.state.currIndex - 1,
@@ -21,7 +21,7 @@ class Carousel extends Component {
     }
   };
 
-  onNextClick = () => {
+  onNextImgClick = () => {
     const { images, currIndex } = this.state;
     if (currIndex < images.length - 1) {
       this.setState({
@@ -74,7 +74,7 @@ class Carousel extends Component {
                     : { color: color, fontSize: '18px' }
                 }
                 aria-hidden="true"
-                onClick={this.onPrevClick}
+                onClick={this.onPrevImgClick}
               />
             </td>
             <td style={{ width: '10px' }}>&nbsp;</td>
@@ -105,7 +105,7 @@ class Carousel extends Component {
                     : { color: color, fontSize: '18px' }
                 }
                 aria-hidden="true"
-                onClick={this.onNextClick}
+                onClick={this.onNextImgClick}
               />
             </td>
             <td style={{ width: '10px' }}>&nbsp;</td>
