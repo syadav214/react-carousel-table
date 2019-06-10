@@ -4,7 +4,6 @@
   "description": "React component of Carousel inside a table styled in bootstrap ",
   "main": "build/index.js",
   "peerDependencies": {
-    "font-awesome": "^4.7.0",
     "react": "^16.4.0",
     "react-dom": "^16.8.6"
   },
