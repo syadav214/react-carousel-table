@@ -6,7 +6,7 @@ React component of Carousel inside a table styled in bootstrap
 ## Example
 
 
-![alt text](https://user-images.githubusercontent.com/24729891/59196519-93b10b00-8bac-11e9-9110-0f2f6bfd0df7.png)
+![alt text](Carousel.png)
 
 ```html
 <!-- Put bootstrap cdn link (like below) in index.html of your React App -->
